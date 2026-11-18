@@ -343,7 +343,7 @@ footer {
 
 
 .gallery-item {
-  height: 320px;
+  height: 400px;
   overflow: hidden;
   padding: 8px;
   background: linear-gradient(135deg, #d8bd80, #a77c35, #f3e4bc);
@@ -476,4 +476,84 @@ footer {
 @media (max-width: 500px) {
   .wish-card { padding: 22px; }
   .auth-options { grid-template-columns: 1fr; }
+}
+
+.theme-toggle {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid #d9cebc;
+}
+
+.theme-toggle button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 9px;
+  border: 0;
+  background: transparent;
+  color: #725c36;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.theme-toggle button.selected {
+  background: #ae8747;
+  color: #fff;
+}
+
+.dark-theme .theme-toggle { border-color: #a98449; }
+.dark-theme .theme-toggle button { color: #e5c986; }
+.dark-theme .theme-toggle button.selected { background: #ae8747; color: #fff; }
+
+.payment-qr {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid #eadfce;
+  text-align: center;
+}
+
+.payment-qr h3 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.payment-qr p { margin: 0 0 8px; color: #82786c; font-size: 13px; line-height: 1.6; }
+.payment-qr img { display: block; width: min(100%, 300px); height: auto; border-radius: 10px; }
+.dark-theme .payment-qr { border-color: #4b4035; }
+.dark-theme .payment-qr p { color: #d1c5b5; }
+
+.birthday-pin {
+  display: block;
+  margin-top: 18px;
+  width: min(100%, 350px);
+  height: 320px;
+  border: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;
+}
+
+@media (min-width: 701px) {
+  .wish-card { max-width: 820px; display: grid; grid-template-columns: minmax(0, 1fr) 260px; align-items: start; gap: 28px; }
+  .wish-form-content { min-width: 0; }
+  .payment-qr { margin-top: 0; padding: 0 0 0 22px; border-top: 0; border-left: 1px solid #eadfce; }
+  .payment-qr img { width: 100%; }
+  .dark-theme .payment-qr { border-color: #4b4035; }
+}
+
+@media (max-width: 500px) {
+  .nav-actions { flex-wrap: wrap; justify-content: center; }
+  .theme-toggle button { padding: 7px; }
+}
+
+@media (max-width: 700px) {
+  .wish-card { grid-template-columns: 1fr; }
+  .payment-qr { margin-top: 22px; padding-top: 20px; border-top: 1px solid #eadfce; border-left: 0; }
 }
